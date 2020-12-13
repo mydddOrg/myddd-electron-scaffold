@@ -1,6 +1,4 @@
 {
     "name":"lite",
-    "api":"https://lite.workplus.io/v1",
-    "domainId":"khwjpn-app",
-    "amapRestKey":"0d659feae96844db545d8d4fbedaa32c"
+    "api":"https://lite.workplus.io/v1"
 }
