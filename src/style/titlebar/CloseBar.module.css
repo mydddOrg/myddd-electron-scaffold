@@ -1,0 +1,28 @@
+.close_bar_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.closebar_close {
+    height: 100%;
+    width: 15px;
+    background: url("../../assets/titlebar/title_action_close.png") no-repeat center center;
+    background-size: 15px;
+}
+
+.closebar_min {
+    height: 100%;
+    width: 15px;
+    background: url("../../assets/titlebar/title_action_min.png") no-repeat center center;
+    background-size: 15px;
+
+}
+
+.closebar_max {
+    height: 100%;
+    width: 15px;
+    background: url("../../assets/titlebar/title_action_max.png") no-repeat center center;
+    background-size: 15px;
+}

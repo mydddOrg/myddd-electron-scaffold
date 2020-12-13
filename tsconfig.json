@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es5",
+      "jsx": "react",
+      "baseUrl": "./src",
+      "experimentalDecorators":true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop":true,
+      "paths": {
+        "components": ["components"],
+        "stores": ["stores"],
+        "locales": ["locales"],
+        "modules":["modules"],
+        "assets":["assets"],
+        "style":["style"],
+        "views":["views"],
+        "zoom":["../sdk/zoom"],
+      }
+    },
+  }

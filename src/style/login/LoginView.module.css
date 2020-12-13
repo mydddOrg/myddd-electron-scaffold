@@ -1,0 +1,122 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
+  height: 380px;
+}
+
+.alert {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.alert_hidden {
+  display: none;
+}
+
+.bg {
+  width: 100%;
+  min-height: 100px;
+  background-image: url("../../assets/login/login_bg.png");
+  margin-bottom: 60px;
+}
+
+.input_username {
+  height: 34px;
+  margin: 5px 8px 15px 8px;
+}
+
+.input_password {
+  height: 34px;
+  margin: 0 8px 20px 8px;
+}
+
+.remeber_passwd {
+  height: 20px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+}
+
+.auto_login {
+  height: 20px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+}
+
+.login_tool {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.login_metting {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.login_metting_icon {
+  height: 32px;
+  width: 30px;
+  background: url('../../assets/login/metting.png') no-repeat center center;
+  background-size: 25px;
+}
+
+.login_metting_text {
+  color: blueviolet;
+  margin-left: 4px;
+}
+
+.switch_language {
+  height: 20px;
+}
+
+.developer_tool {
+  height: 20px;
+  margin-right: 8px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-size: 100px 100px;
+  position: absolute;
+  box-shadow: 0 10px 10px 0 rgba(244, 244, 244, 0.6);
+  top: 60px;
+  left: 90px;
+  background-image: url("../../assets/login/login_default_avatar.png");
+}
+
+.close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 15px;
+  left: 15px;
+  border-radius: 50%;
+  background-image: url("../../assets/login/login_close.png");
+  z-index: 100;
+}
+
+.login_with_code {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}

@@ -1,0 +1,25 @@
+.title_bar_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.close_bar {
+    height: 100%;
+    width: 68px;
+    margin-right: 15px;
+}
+
+.search_bar {
+    height: 100%;
+    width: 240px;
+}
+
+.title_right_bar {
+    margin-left: 15px;
+    height: 100%;
+}
+
+.title_empty_bar {
+    flex: 1;
+}

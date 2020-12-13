@@ -1,0 +1,10 @@
+node_modules
+dist
+package
+electron.js
+guide/_book
+entry.js
+bin/ScreenCapture.app
+ext/guide/_book
+*.hot-update.js
+*.hot-update.json

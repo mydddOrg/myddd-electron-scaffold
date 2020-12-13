@@ -1,0 +1,88 @@
+html {
+    font-family: '"PingFang SC", -apple-system, "Lantinghei SC",Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif !important';
+}
+
+.full_div {
+    width: 100%;
+    height: 100%;
+}
+
+.center_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.drag {
+    -webkit-app-region: drag;
+}
+
+.no_dray {
+    -webkit-app-region: no-drag;
+}
+
+.dray {
+    -webkit-app-region: drag;
+}
+
+input {
+    -webkit-app-region: no-drag;
+}
+
+button {
+    -webkit-app-region: no-drag;
+}
+
+.coding {
+    width: 100%;
+    height: 100%;
+    background: url("../assets/bg.png") no-repeat center center;
+}
+
+* {
+    -webkit-user-select: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+textarea {
+    resize: none;
+}
+
+/* 去掉边框上的阴影 */
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active,
+.ant-select-open .ant-select-selection,
+.ant-input:focus,
+.ant-input:hover {
+  border-color: #d9d9d9;
+  box-shadow: none;
+}
+
+/* 文字超出省略 */
+.text_hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 鼠标小手 */
+.cursor {
+    cursor: pointer;
+}
+
+.zindex {
+    z-index: 100;
+}
