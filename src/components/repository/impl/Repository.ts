@@ -60,7 +60,7 @@ export class Repository extends IRepository {
 
     private prepareDB() {
         const sqlite3 = sqlite.verbose();
-        const path = require('path');
+        const path = window.require('path');
         const userDataPath = FSDirUtil.userDataDir();
         this.dbPath = path.join(userDataPath, this.dbName);
         this.db = new sqlite3.Database(this.dbPath, () => { });

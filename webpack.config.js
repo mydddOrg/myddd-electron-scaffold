@@ -55,7 +55,17 @@ module.exports = [
     extensions: ['.ts', '.tsx', '.js', '.jsx', 'css'],
     plugins: [
       new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
-    ]
+    ],
+    fallback: {
+      "fs": false,
+      "tls": false,
+      "net": false,
+      "path": false,
+      "zlib": false,
+      "http": false,
+      "https": false,
+      "stream": false
+    }
   },
   externals: { 
     'sqlite3':'commonjs sqlite3',

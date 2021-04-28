@@ -15,3 +15,25 @@ myddd在electron和web上的实现基本一致，都是基于TypeScript + React�
 
 
 详细文档 [稍后完善]
+
+
+
+
+
+## electron国内源
+
+electron本身的源在国外，如果使用国外源，yarn install时会非常慢。所以，在第一次yarn install之前，最好设置以下源，将其变更为国内源
+
+~~~shell
+#linux&mac
+export ELECTRON_CUSTOM_DIR=12.0.5
+export ELECTRON_MIRROR='https://npm.taobao.org/mirrors/electron/'
+export ELECTRON_BUILDER_BINARIES_MIRROR='http://npm.taobao.org/mirrors/electron-builder-binaries/'
+
+#win
+$env:ELECTRON_CUSTOM_DIR=12.0.5
+$env:ELECTRON_MIRROR='https://npm.taobao.org/mirrors/electron/'
+$env:ELECTRON_BUILDER_BINARIES_MIRROR='http://npm.taobao.org/mirrors/electron-builder-binaries/'
+~~~
+
+## 

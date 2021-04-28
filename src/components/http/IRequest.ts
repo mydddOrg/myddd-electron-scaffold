@@ -71,6 +71,6 @@ export abstract class IRequest {
      * @param url 
      * @param file 
      */
-    abstract async uploadFile<T>(url: string, file: File, progressBlock?: (progress: number) => void): Promise<BaseResponse>;
+    abstract uploadFile<T>(url: string, file: File, progressBlock?: (progress: number) => void): Promise<BaseResponse>;
 
 }

@@ -148,7 +148,8 @@ if (!gotTheLock) {
       webPreferences: {
         nodeIntegration: true,
         webSecurity: false,
-        enableRemoteModule: true
+        enableRemoteModule: true,
+        contextIsolation: false
       },
       resizable: false,
       show: false,
@@ -499,7 +500,8 @@ class ImageWindow extends Events {
       width: this.width, height: this.heiht, webPreferences: {
         nodeIntegration: true,
         webSecurity: false,
-        enableRemoteModule: true
+        enableRemoteModule: true,
+        contextIsolation: false
       },
       resizable: false,
       show: false,
