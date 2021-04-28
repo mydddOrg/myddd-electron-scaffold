@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import * as ReactDOM from "react-dom";
 
 import { AuthStore } from 'stores/AuthStore';
-
-import { MainView } from 'views/main/MainView'
 import { LoginView } from 'views/login/LoginView'
 
 import 'antd/dist/antd.css';
@@ -38,7 +36,6 @@ const App = observer((props?: any) => {
       <HashRouter >
         <div className='full_div'>
           <Route path="/" exact component={Index} />
-          <Route path="/main" component={MainView} />
           <Route path="/login" component={LoginView} />
         </div>
       </HashRouter>

@@ -1,6 +1,7 @@
 
 import { useHistory } from "react-router-dom";
-import 'style/login/LoginView.module.css'
+import styles from 'style/login/LoginView.module.less'
+
 import { FormattedMessage } from 'react-intl';
 import { Alert, Input, Checkbox, Spin } from 'antd';
 import { ILoginApplication } from "modules/login/view/ILoginApplication";
@@ -14,7 +15,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { observer } from "mobx-react-lite";
 import I18Store from "stores/I18Store";
 import { KeyCode } from "components/util/KeyCode";
-import React, { useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthStore } from "stores/AuthStore";
 
 /**
@@ -29,7 +30,8 @@ export const LoginView = observer(() => {
   const loginAppliction: ILoginApplication = InstanceFactory.getInstance(ILoginApplication);
 
   const intl = useIntl();
-  let history = useHistory();
+
+  const history = useHistory();
 
   const i18nStore = useContext(I18Store);
 
@@ -90,7 +92,7 @@ export const LoginView = observer(() => {
         setLoading(false);
 
         //MOCK 这只是模拟，用户名和密码相同则允许登录
-        if(username == password){
+        if (username == password) {
           setAlert(HIDDEN_ALERT);
           loginAppliction.initLoginUser().then((success: boolean) => {
             if (success) {
@@ -182,43 +184,41 @@ export const LoginView = observer(() => {
   }
 
   return (
-    <Spin spinning={isLoading}>
-      <div className="login" onKeyPress={login} onKeyDown={keyDown} tabIndex={0}>
-        <div className={alert}><Alert message={loginError} type="error" showIcon /></div>
-        <div className="bg drag"></div>
-        <div className="input_username"><Input className="input_username" value={username} onChange={e => setUsername(e.target.value)} /></div>
-        <div className="input_password"><Input className="input_password" value={password} onChange={e => setPassword(e.target.value)} type='password' /></div>
-        <div className="remeber_passwd"><Checkbox checked={true}><FormattedMessage id="login_remember_password" /></Checkbox></div>
-        {/* <div className="auto_login"><Checkbox><FormattedMessage id="login_auto_login" /></Checkbox></div> */}
-        <div className='login_tool'>
-          <div className='switch_language'>
-            <Dropdown overlay={menu}>
-              <Button>
-                {i18nStore.getCurrentLanguage()} <DownOutlined />
-              </Button>
-            </Dropdown>
-          </div>
-          {
-            (() => {
-              if (enableDevelope) {
-                return (
-                  <div className='developer_tool'>
-                    <Dropdown overlay={developeMenu}>
-                      <Button>
-                        开发选项
-                    </Button>
-                    </Dropdown>
-                  </div>
-                )
-              }
-            })()
-          }
-
+    <div className={styles.login} onKeyPress={login} onKeyDown={keyDown} tabIndex={0}>
+      {/* <div className={styles.alert}><Alert message={loginError} type="error" showIcon /></div> */}
+      <div className={`${styles.bg} ${'drag'}`}></div>
+      <div className={styles.input_username}><Input value={username} onChange={e => setUsername(e.target.value)} /></div>
+      <div className={styles.input_password}><Input value={password} onChange={e => setPassword(e.target.value)} type='password' /></div>
+      <div className={styles.remeber_passwd}><Checkbox checked={true}><FormattedMessage id="login_remember_password" /></Checkbox></div>
+      {/* <div className="auto_login"><Checkbox><FormattedMessage id="login_auto_login" /></Checkbox></div> */}
+      <div className={styles.login_tool}>
+        <div className={styles.switch_language}>
+          <Dropdown overlay={menu}>
+            <Button>
+              {i18nStore.getCurrentLanguage()} <DownOutlined />
+            </Button>
+          </Dropdown>
         </div>
+        {
+          (() => {
+            if (enableDevelope) {
+              return (
+                <div className={styles.developer_tool}>
+                  <Dropdown overlay={developeMenu}>
+                    <Button>
+                      开发选项
+                </Button>
+                  </Dropdown>
+                </div>
+              )
+            }
+          })()
+        }
 
-        <div className="avatar drag"></div>
-        <div className="close no_dray" onClick={exit}></div>
       </div>
-    </Spin>
+
+      <div className={`${styles.avatar} 'drag'`}></div>
+      <div className={`${styles.close} 'no_dray'`} onClick={exit}></div>
+    </div>
   );
 });
