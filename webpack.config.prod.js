@@ -1,5 +1,4 @@
-const { CheckerPlugin } = require('awesome-typescript-loader')
-const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -11,7 +10,7 @@ module.exports = [{
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'ts-loader'
       },
       {
         test: /\.css$/i,
@@ -36,11 +35,14 @@ module.exports = [{
   },
   plugins: [
       new CleanWebpackPlugin(),
-      new CheckerPlugin(),
-      new CopyPlugin([
-        { from: 'public/index.html', to: '.' },
-        { from: 'src/assets', to: './assets' }
-      ])
+      new CopyPlugin(
+        {
+          patterns: [
+            { from: 'public/index.html', to: '.' },
+            { from: 'src/assets', to: './assets' }
+          ]
+        }
+      ),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
@@ -71,7 +73,7 @@ module.exports = [{
     rules: [{
       test: /\.ts$/,
       include: /src/,
-      use: [{ loader: 'awesome-typescript-loader' }]
+      use: [{ loader: 'ts-loader' }]
     }]
   },
   node: {
