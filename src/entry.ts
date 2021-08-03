@@ -335,18 +335,6 @@ if (!gotTheLock) {
 
   const loadDevTool = () => {
     win.webContents.openDevTools({ mode: 'detach' })
-
-    const reactDevTool = '/Users/lingen/Library/Application\\ Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.6.0_0';
-
-    const devToolsArray = [reactDevTool];
-
-    for (const devTool in devToolsArray) { 
-      if (fsExistsSync(devTool)) {
-        BrowserWindow.addDevToolsExtension(
-          path.join(os.homedir(), devTool)
-        )
-      }
-    }
   }
 
 

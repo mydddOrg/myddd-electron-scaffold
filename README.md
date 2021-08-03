@@ -26,12 +26,10 @@ electron本身的源在国外，如果使用国外源，yarn install时会非常
 
 ~~~shell
 #linux&mac
-export ELECTRON_CUSTOM_DIR=12.0.5
 export ELECTRON_MIRROR='https://npm.taobao.org/mirrors/electron/'
 export ELECTRON_BUILDER_BINARIES_MIRROR='http://npm.taobao.org/mirrors/electron-builder-binaries/'
 
 #win
-$env:ELECTRON_CUSTOM_DIR=12.0.5
 $env:ELECTRON_MIRROR='https://npm.taobao.org/mirrors/electron/'
 $env:ELECTRON_BUILDER_BINARIES_MIRROR='http://npm.taobao.org/mirrors/electron-builder-binaries/'
 ~~~
