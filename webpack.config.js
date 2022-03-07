@@ -37,25 +37,23 @@ module.exports = [
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, 'dist'),
-      index: 'index.html',
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
       compress: true,
       port: 3000,
-      hot: true,
-      writeToDisk: true
+      hot: true
     },
     node: {
       __dirname: false
     },
     plugins: [
-      new CopyPlugin(
-        {
-          patterns: [
-            { from: 'public/index.html', to: '.' },
-            { from: 'src/assets', to: './assets' }
-          ]
-        }
-      ),
+      new CopyPlugin({
+        patterns: [
+          { from: 'public/index.html', to: '.' },
+          { from: 'src/assets', to: './assets' }
+        ],
+      })
     ],
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', 'css'],

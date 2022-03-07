@@ -35,14 +35,12 @@ module.exports = [{
   },
   plugins: [
       new CleanWebpackPlugin(),
-      new CopyPlugin(
-        {
-          patterns: [
-            { from: 'public/index.html', to: '.' },
-            { from: 'src/assets', to: './assets' }
-          ]
-        }
-      ),
+      new CopyPlugin({
+        patterns: [
+          { from: 'public/index.html', to: '.' },
+          { from: 'src/assets', to: './assets' }
+        ],
+      })
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],

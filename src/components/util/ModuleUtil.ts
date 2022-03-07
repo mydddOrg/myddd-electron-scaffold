@@ -2,7 +2,7 @@ export class ModuleUtil {
 
     public static fs = window.require("fs");
 
-    public static remote = window.require('electron').remote;
+    public static remote = window.require('@electron/remote');
 
     public static path = window.require('path'); 
 

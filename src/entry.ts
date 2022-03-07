@@ -13,13 +13,12 @@ let documentWin: DocumentWindow;
 let joinMeetingWin: JoinMettingWindow;
 let tray: any;
 
+require('@electron/remote/main').initialize()
 
 const globalAny: any = global;
 
 globalAny.NODE_ENV = process.env.NODE_ENV;
 
-
-app.allowRendererProcessReuse = false
 
 app.whenReady().then(() => {
   protocol.registerFileProtocol('file', (request, callback) => {
@@ -148,7 +147,6 @@ if (!gotTheLock) {
       webPreferences: {
         nodeIntegration: true,
         webSecurity: false,
-        enableRemoteModule: true,
         contextIsolation: false
       },
       resizable: false,
@@ -161,6 +159,8 @@ if (!gotTheLock) {
       e.preventDefault();
       win.webContents.send('OPEN_URL_EXTERNAL', url);
     });
+
+    require("@electron/remote/main").enable(win.webContents)
 
     win.hide();
 
@@ -488,7 +488,6 @@ class ImageWindow extends Events {
       width: this.width, height: this.heiht, webPreferences: {
         nodeIntegration: true,
         webSecurity: false,
-        enableRemoteModule: true,
         contextIsolation: false
       },
       resizable: false,
@@ -553,8 +552,7 @@ class DocumentWindow extends Events {
       parent: win,
       webPreferences: {
         nodeIntegration: false,
-        webSecurity: false,
-        enableRemoteModule: true
+        webSecurity: false
       },
     })
 
@@ -608,7 +606,6 @@ class JoinMettingWindow extends Events {
       webPreferences: {
         nodeIntegration: true,
         webSecurity: false,
-        enableRemoteModule: true
       },
       parent:win,
       modal: true,

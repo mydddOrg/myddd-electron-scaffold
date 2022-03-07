@@ -7,7 +7,7 @@ import { Logger } from "components/logger/Logger";
 export class FSDirUtil {
 
 
-    private static appDataDir = (ModuleUtil.electron.app || ModuleUtil.electron.remote.app).getPath('userData');
+    private static appDataDir = (ModuleUtil.electron.app || ModuleUtil.remote.app).getPath('userData');
 
     private static DOCUMENT_DIR: string = "documents";
     
@@ -132,7 +132,7 @@ export class FSDirUtil {
 
     public static async mediaExists(mediaId: string,type:string): Promise<boolean> {
         const mediaPath = this.mediaPath(mediaId,type);
-        let exists = await FileUtil.accessFile(mediaPath);
+        const exists = await FileUtil.accessFile(mediaPath);
         return exists;
     }
 
