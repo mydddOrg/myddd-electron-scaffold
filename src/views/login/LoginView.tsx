@@ -17,6 +17,7 @@ import I18Store from "stores/I18Store";
 import { KeyCode } from "components/util/KeyCode";
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthStore } from "stores/AuthStore";
+import { TYPES } from "components/ioc/Types";
 
 /**
  * 登录界面
@@ -27,7 +28,7 @@ export const LoginView = observer(() => {
   const SHOW_ALERT: string = 'alert';
   const HIDDEN_ALERT: string = 'alert_hidden';
 
-  const loginAppliction: ILoginApplication = InstanceFactory.getInstance(ILoginApplication);
+  const loginAppliction: ILoginApplication = InstanceFactory.getInstance(TYPES.ILoginApplication);
 
   const intl = useIntl();
 

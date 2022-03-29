@@ -7,10 +7,11 @@ import { AuthStore } from 'stores/AuthStore';
 import BaseRepository from 'components/repository/BaseRepository';
 import { FSDirUtil } from 'components/util/FSDirUtil';
 import { FileUtil } from 'components/util/FileUtil';
+import { TYPES } from 'components/ioc/Types';
 
 export class LoginApplication extends ILoginApplication{
 
-    private loginNet:ILoginNet = InstanceFactory.getInstance(ILoginNet);
+    private loginNet:ILoginNet = InstanceFactory.getInstance(TYPES.ILoginNet);
 
     public async endpoint(): Promise<boolean> {
         const response:BaseResponse = await this.loginNet.endpoint();

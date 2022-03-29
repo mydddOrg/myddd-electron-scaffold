@@ -2,9 +2,8 @@ import { InstanceFactory } from './../../../components/ioc/InstanceFactory';
 import Config from 'components/Config';
 import { BaseResponse, IRequest } from 'components/http/IRequest';
 import { ILoginNet } from '../domain/ILoginNet';
-import { AuthStore } from 'stores/AuthStore';
-import { Inject } from 'typescript-ioc';
 import { ModuleUtil } from 'components/util/ModuleUtil';
+import { TYPES } from 'components/ioc/Types';
 
 export class LoginNet extends ILoginNet{
 
@@ -14,7 +13,7 @@ export class LoginNet extends ILoginNet{
     static SYSTEM_WINDOW ='Windows';
     static SYSTEM_LINUX = 'Linux'
 
-    request:IRequest = InstanceFactory.getInstance(IRequest);
+    request:IRequest = InstanceFactory.getInstance(TYPES.IRequest);
 
     public constructor(){
         super()
