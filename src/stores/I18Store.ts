@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, makeAutoObservable } from "mobx";
 
 
 import en_US from 'locales/en_US'
@@ -9,11 +9,15 @@ import { createContext } from "react";
 
 class I18Store {
 
-    @observable locale: string = 'zh';
+    locale: string = 'zh';
 
-    @observable language: any = zh_CN;
+    language: any = zh_CN;
 
-    @action public switchLanguage(language: string) {
+    constructor() {
+        makeAutoObservable(this)
+    }
+
+    public switchLanguage(language: string) {
         if (language == 'zh_CN') {
             this.locale = 'zh';
             this.language = zh_CN

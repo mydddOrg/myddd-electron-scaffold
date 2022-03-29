@@ -1,8 +1,8 @@
+import { InstanceFactory } from './../../../components/ioc/InstanceFactory';
 import { ILoginApplication } from '../view/ILoginApplication';
 import { ILoginNet } from '../domain/ILoginNet';
 import { BaseResponse } from 'components/http/IRequest';
 
-import {Inject} from "typescript-ioc";
 import { AuthStore } from 'stores/AuthStore';
 import BaseRepository from 'components/repository/BaseRepository';
 import { FSDirUtil } from 'components/util/FSDirUtil';
@@ -10,8 +10,7 @@ import { FileUtil } from 'components/util/FileUtil';
 
 export class LoginApplication extends ILoginApplication{
 
-    @Inject
-    private loginNet:ILoginNet;
+    private loginNet:ILoginNet = InstanceFactory.getInstance(ILoginNet);
 
     public async endpoint(): Promise<boolean> {
         const response:BaseResponse = await this.loginNet.endpoint();

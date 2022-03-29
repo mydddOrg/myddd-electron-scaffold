@@ -1,38 +1,38 @@
-import { observable, action } from 'mobx';
+import { observable, action, makeAutoObservable } from 'mobx';
 import { createContext } from 'react';
 'use strict'
 
 export class AuthStore {
-    @observable token: string = ''
-    @observable loginName: string = ''
-    @observable password: string = ''
-    @observable userId: string = ''
+    token: string = ''
+    loginName: string = ''
+    password: string = ''
+    userId: string = ''
 
-    @observable sessionEndpoint: string = ''
-    @observable secret: string = '';
+    sessionEndpoint: string = ''
+    secret: string = '';
 
 
     private static instance: AuthStore;
 
     private constructor() {
-
+        makeAutoObservable(this)
     }
 
-    @action setAuth(auth: any) {
+    setAuth(auth: any) {
         this.token = auth.access_token;
         this.userId = auth.client_id;
         this.secret = auth.secret;
     }
 
-    @action setLoginName(loginName: string) {
+    setLoginName(loginName: string) {
         this.loginName = loginName;
     }
 
-    @action setUserId(userId: string) {
+    setUserId(userId: string) {
         this.userId = userId;
     }
 
-    @action setSession(sessionAuth: any) {
+    setSession(sessionAuth: any) {
         this.sessionEndpoint = sessionAuth.session_endpoint;
         this.secret = sessionAuth.session_secret;
     }

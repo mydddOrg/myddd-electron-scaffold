@@ -1,3 +1,4 @@
+import { InstanceFactory } from './../../../components/ioc/InstanceFactory';
 import Config from 'components/Config';
 import { BaseResponse, IRequest } from 'components/http/IRequest';
 import { ILoginNet } from '../domain/ILoginNet';
@@ -13,8 +14,7 @@ export class LoginNet extends ILoginNet{
     static SYSTEM_WINDOW ='Windows';
     static SYSTEM_LINUX = 'Linux'
 
-    @Inject
-    request:IRequest;
+    request:IRequest = InstanceFactory.getInstance(IRequest);
 
     public constructor(){
         super()

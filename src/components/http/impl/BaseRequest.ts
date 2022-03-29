@@ -1,6 +1,5 @@
+import { InstanceFactory } from './../../ioc/InstanceFactory';
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { AuthEvent } from 'components/event/AuthEvent';
-import { Inject } from 'typescript-ioc';
 import { IDefaultHeaderPlugin } from '../IDefaultHeaderPlugin';
 import { BaseResponse, IRequest, IResponse } from '../IRequest';
 import { Logger } from 'components/logger/Logger';
@@ -19,8 +18,7 @@ export class BaseRequest implements IRequest {
 
     private static DEFAULT_TIMEOUT = 30 * 1000;
 
-    @Inject
-    private headerPlugin: IDefaultHeaderPlugin;
+    private headerPlugin: IDefaultHeaderPlugin = InstanceFactory.getInstance(IDefaultHeaderPlugin);
 
 
     private REQUEST_ERROR: number[] = [this.TOKEN_EXPIRED, this.LICENSE_NOT_FOUND, this.LICENSE_INVALID, this.DEVICE_FORBIDDEN, this.DEVICE_BUNDLING, this.MAINTENANCE_MODE, this.MAINTENANCE_MODE2, this.DEVICE_NOT_AUTH];

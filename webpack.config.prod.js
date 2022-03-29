@@ -9,8 +9,9 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        loader: 'ts-loader'
+        test: /\.([jt]sx?)?$/,
+        use: "swc-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/i,
@@ -71,7 +72,7 @@ module.exports = [{
     rules: [{
       test: /\.ts$/,
       include: /src/,
-      use: [{ loader: 'ts-loader' }]
+      use: [{ loader: 'swc-loader' }]
     }]
   },
   node: {
