@@ -1,3 +1,4 @@
+import { TYPES } from 'components/ioc/Types';
 import { ITable } from './ITable';
 import { IRepository } from './IRepository';
 import { InstanceFactory } from 'components/ioc/InstanceFactory';
@@ -23,7 +24,7 @@ export class BaseRepository {
 
     public getRepository(): IRepository {
         if (!this.repository) {
-            this.repository = InstanceFactory.getInstance(IRepository);
+            this.repository = InstanceFactory.getInstance(TYPES.IRepository);
         }
         return this.repository;
     }

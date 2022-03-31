@@ -3,6 +3,7 @@ import { InstanceFactory } from "components/ioc/InstanceFactory";
 import { ModuleUtil } from "components/util/ModuleUtil";
 import { FileUtil } from "components/util/FileUtil";
 import { FSDirUtil } from "components/util/FSDirUtil";
+import { TYPES } from "components/ioc/Types";
 
 export class Logger {
 
@@ -10,7 +11,7 @@ export class Logger {
 
     private static getLogger(): ILogger {
         if (!Logger.logger) {
-            Logger.logger = InstanceFactory.getInstance(ILogger);
+            Logger.logger = InstanceFactory.getInstance(TYPES.ILogger);
         }
         return Logger.logger;
     }
